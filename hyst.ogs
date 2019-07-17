@@ -1,0 +1,7 @@
+fft_filters -r 2 iy:=(col(1),col(3)) filter:=bandblock freq1:=59.5 freq2:=60.5;
+wks.nCols=wks.nCols+2;
+wks.col=6;
+wks.col.type=4;
+csetvalue col:=col(6) formula:="col(2)*131/12.54" recalculate:=0;
+csetvalue col:=col(7) formula:="col(5)" recalculate:=0;
+plotxy (6,7) plot:=200 ogl:=<new template:=micro_kerr_hyst>;
